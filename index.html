@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Titanium App Builder</title>
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.8.5.custom.css?v=1">	
+	<link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+
+	<div id="container" class="clearfix">
+		<header class="clearfix">
+			<hgroup>
+				<h1>The App Builder</h1>
+				<h2>A GUI app builder for Appcelerator's Titanium</h2>
+			</hgroup>
+			
+			<button id="resetApp">Reset App</button>
+		</header>
+		
+		<section id="wrapper" class="clearfix">
+			<aside id="sidebar" class="clearfix">
+				<ul>
+					<li><a id="tableView" href="#">Table View</a></li>
+					<li><a id="label" href="#">Label</a></li>
+					<li><a id="imageView" href="#">ImageView</a></li>
+				</ul>
+			</aside>
+
+			<div id="appCanvas" class="clearfix">
+				<div id="appNavBar">
+					<h1>App Title</h1>
+				</div>
+				<ul id="appItems"></ul>
+			</div><!-- #appCanvas -->			
+			
+			<div id="codeWindow" class="clearfix">
+				<pre>
+					<ul id="codeItems"></ul>
+				</pre>
+			</div>
+		</section>
+		
+		<footer class="clearfix">
+			Built by Rick Blalock
+		</footer>
+	</div>
+	
+	<script id="tableViewCode" type="text/x-jquery-tmpl">
+	<li class="item">
+		var rows = [<br />
+			{ title: 'Row 1' },<br />
+			{ title: 'Row 2' },<br />			
+			{ title: 'Row 3' }<br />			
+		];<br />
+		<br />
+		Titanium.UI.createTableView({<br />
+			<span>data: rows,</span><br />
+			layout: '${layout}',<br />
+			<div class="newProps"></div>
+		});
+	</li>
+	</script>
+	
+	<script id="uiElem" type="text/x-jquery-tmpl">
+	<li class="item">
+		<div class="elemInfo">
+			<h5><a href="${apiLink}">${type}</a></h5>
+		</div>
+		
+		<div class="elemContainer">
+			{{html markup}}
+		</div>
+	</li>	
+	</script>
+	
+	<script id="tableTmpl" type="text/x-jquery-tmpl">
+		<div class="elemConfig">
+			<h5>Options</h5>
+			<label>hasDetail</label>
+			<input class="hasDetail" value="true" name="hasDetail" type="checkbox" />
+		</div>
+
+		<ul>
+			<li>Row 1</li>
+			<li>Row 2</li>
+			<li>Row 3</li>						
+		</ul>
+	</script>
+
+	<!-- Include the jQuery library -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="lib/src/jquery-1.4.2.min.js"><\/script>');</script>
+	<script src="lib/src/jquery-ui-1.8.5.custom.min.js"></script>
+	<script src="lib/src/jquery.tmpl.min.js"></script>
+	<script src="lib/helper.js"></script>
+	<script src="lib/elems.js"></script>
+	<script src="lib/app.js"></script>
+</body>
+</html>
