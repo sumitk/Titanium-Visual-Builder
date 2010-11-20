@@ -23,7 +23,7 @@
 				<ul>
 					<li><a id="tableView" href="#">Table View</a></li>
 					<li><a id="label" href="#">Label</a></li>
-					<li><a id="imageView" href="#">ImageView</a></li>
+					<li><a id="textfield" href="#">TextField</a></li>
 				</ul>
 			</aside>
 
@@ -62,6 +62,24 @@
 	</li>
 	</script>
 	
+	<script id="labelCode" type="text/x-jquery-tmpl">
+	<li class="item">
+		Titanium.UI.createLabel({<br />
+			text: '${text}',<br />
+			<div class="newProps"></div>
+		});
+	</li>
+	</script>
+	
+	<script id="textfieldCode" type="text/x-jquery-tmpl">
+	<li class="item">
+		Titanium.UI.createTextField({<br />
+			value: '${value}',<br />
+			<div class="newProps"></div>
+		});
+	</li>
+	</script>		
+	
 	<script id="uiElem" type="text/x-jquery-tmpl">
 	<li class="item">
 		<div class="elemInfo">
@@ -79,6 +97,10 @@
 			<h5>Options</h5>
 			<label>hasDetail</label>
 			<input class="hasDetail" value="true" name="hasDetail" type="checkbox" />
+			<br />
+			
+			<label>BG Color</label>
+			<input class="backgroundColor" value="'#333'" name="backgroundColor" type="checkbox" />
 		</div>
 
 		<ul>
@@ -87,6 +109,27 @@
 			<li>Row 3</li>						
 		</ul>
 	</script>
+	
+	<script id="labelTmpl" type="text/x-jquery-tmpl">
+		<div class="elemConfig">
+			<h5>Options</h5>
+			<label>hasDetail</label>
+			<input class="hasDetail" value="true" name="hasDetail" type="checkbox" />
+			<br />
+			
+			<label>BG Color</label>
+			<input class="backgroundColor" value="'#333'" name="backgroundColor" type="checkbox" />
+		</div>
+
+      <p>Label Text Here</p>
+	</script>	
+	
+	<script id="textfieldTmpl" type="text/x-jquery-tmpl">
+		<div class="elemConfig">
+		</div>
+
+      <input type="text" value="Text Value Here" />
+	</script>	
 
 	<!-- Include the jQuery library -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
